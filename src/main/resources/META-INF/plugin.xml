@@ -1,10 +1,56 @@
+<!--
+这是一个 IntelliJ IDEA 插件的配置文件，它定义了插件的基本信息、功能和与其他模块的依赖关系。
+
+   * <idea-plugin>:
+       * 这是 plugin.xml 文件的根元素，所有其他插件配置都包含在其中。
+
+   * <id>com.sky.car.ai.code.review</id>:
+       * 意义: 插件的唯一标识符。它应该是一个全局唯一的字符串，通常采用反向域名格式（如 com.yourcompany.yourplugin）。一旦发布，这个 ID 就不能更改，因为它用于识别插件并处理更新。
+
+   * <name>CodeReview</name>:
+       * 意义: 插件在 IntelliJ IDEA UI 中显示的名称。这是用户在插件市场或 IDE 中看到的名字。
+
+   * <vendor email="jiangxue0927@gmail.com" url="https://github.com/">SkyCarAI</vendor>:
+       * 意义: 插件的开发者或供应商信息。
+           * email: 供应商的联系邮箱。
+           * url: 供应商的网站或项目主页 URL。
+           * 标签内容 SkyCarAI: 供应商的名称。
+
+   * <description><![CDATA[...]]></description>:
+       * 意义: 插件的详细描述。这部分内容会显示在插件市场和 IDE 的插件管理界面中，用于向用户介绍插件的功能。
+       * <![CDATA[...]]>: 这是一个 CDATA 节，表示其中的内容是纯文本，不会被 XML 解析器解析为标签。这允许你在描述中包含 HTML 标签或特殊字符而无需转义。
+
+   * <depends>com.intellij.modules.platform</depends>:
+       * 意义: 声明插件所依赖的其他 IntelliJ IDEA 模块或插件。
+           * com.intellij.modules.platform: 这是一个核心模块，几乎所有插件都会依赖它，因为它提供了 IntelliJ 平台的基本功能。如果你的插件使用了特定语言（如 Java、Kotlin）或框架（如
+             Spring）的功能，你还需要添加相应的依赖模块。
+
+   * <actions>:
+       * 意义: 定义插件提供的所有用户可交互的动作（actions），例如菜单项、工具栏按钮、快捷键等。
+
+   * <action id="MyAction" class="com.example.plugin.MyAction" text="Show Hello World" description="Shows a hello world message">:
+       * 意义: 定义一个具体的动作。
+           * id: 动作的唯一标识符。
+           * class: 实现这个动作的 Java/Kotlin 类的完全限定名。当用户触发这个动作时，IDE 会实例化并调用这个类。
+           * text: 动作在 UI 中显示的文本（例如菜单项的名称）。
+           * description: 动作的简短描述，通常在状态栏或工具提示中显示。
+
+   * <add-to-group group-id="ToolsMenu" anchor="last"/>:
+       * 意义: 指定这个动作应该被添加到哪个 UI 组中。
+           * group-id: 目标组的 ID。ToolsMenu 是 IntelliJ IDEA 内置的“工具”菜单。
+           * anchor: 指定动作在组中的位置。last 表示添加到组的末尾。其他选项包括 first、before (在指定动作之前)、after (在指定动作之后)。
+
+  简而言之，这个 plugin.xml 文件告诉 IntelliJ IDEA 你的插件叫什么、它是做什么的、谁开发的、它依赖哪些核心功能，以及它提供哪些用户可以交互的功能（例如一个名为 "Show Hello World"
+  的动作，它会显示一个消息）。
+
+-->
 <idea-plugin>
-    <id>com.example.plugin</id>
-    <name>My Plugin</name>
-    <vendor email="your.email@example.com" url="https://www.example.com">Your Company</vendor>
+    <id>com.sky.car.ai.code.review</id>
+    <name>SkyCarAICodeReview</name>
+    <vendor email="jiangxue0927@gmail.com" url="https://github.com/">SkyCarAI</vendor>
 
     <description><![CDATA[
-    This is a sample plugin that shows a "Hello, World!" message.
+    This is plugin that code review assistant
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
